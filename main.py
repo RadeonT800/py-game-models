@@ -74,16 +74,16 @@ def save_players(players: dict, races: dict, guilds: dict) -> None:
 def main() -> None:
     with open("players.json", "r") as file:
         players = json.load(file)
-    # races = get_races(players)
-    # skills = get_skills(players, races)
-    # guilds = get_guilds(players)
-    # for race in races.values():
-    #     race.save()
-    # for skill in skills.values():
-    #     skill.save()
-    # for guild in guilds.values():
-    #     guild.save()
-    # save_players(players, races, guilds)
+    races = get_races(players)
+    skills = get_skills(players, races)
+    guilds = get_guilds(players)
+    for race in races.values():
+        race.save()
+    for skill in skills.values():
+        skill.save()
+    for guild in guilds.values():
+        guild.save()
+    save_players(players, races, guilds)
 
 
 if __name__ == "__main__":
